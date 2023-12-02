@@ -87,7 +87,7 @@ impl Solver<'_, usize> for Solution {
 
 fn main() {
     let sample = include_str!("../../samples/1.txt");
-    let sample_2 = include_str!("../../samples/2.txt");
+    let sample_2 = include_str!("../../samples/1-2.txt");
     let input = include_str!("../../inputs/1.txt");
     let part_one_problems = [
         aoc::Input::new_sample(sample, 142),
