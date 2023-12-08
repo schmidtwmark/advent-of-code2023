@@ -4,7 +4,7 @@ use itertools::Itertools;
 fn find_starting_digit(string: &str) -> &str {
     for i in 0..string.len() {
         let substring = &string[i..];
-        if substring.chars().nth(0).unwrap().is_ascii_digit() {
+        if substring.chars().next().unwrap().is_ascii_digit() {
             return &substring[0..1];
         } else if substring.starts_with("one") {
             return "1";
@@ -27,13 +27,13 @@ fn find_starting_digit(string: &str) -> &str {
         }
     }
 
-    return "ERROR";
+    "ERROR"
 }
 
 fn find_ending_digit(string: &str) -> &str {
     for i in 0..string.len() {
         let substring = &string[string.len() - 1 - i..];
-        if substring.chars().nth(0).unwrap().is_ascii_digit() {
+        if substring.chars().next().unwrap().is_ascii_digit() {
             return &substring[0..1];
         } else if substring.starts_with("one") {
             return "1";
@@ -56,7 +56,7 @@ fn find_ending_digit(string: &str) -> &str {
         }
     }
 
-    return "ERROR";
+    "ERROR"
 }
 struct Solution {}
 impl Solver<'_, usize> for Solution {

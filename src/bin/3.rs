@@ -1,7 +1,6 @@
-use std::{collections::HashSet, thread::current};
+use std::collections::HashSet;
 
 use aoc::{Grid, Solver};
-use itertools::Itertools;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum GridItem {
@@ -69,7 +68,6 @@ impl Solver<'_, usize> for Solution {
         let mut sum = 0;
 
         for pos in grid.positions() {
-            let (x, y) = pos;
             // println!("Examining pos {pos:?}, current number string {current_number_string}, valid number {valid_number}");
             if pos.0 == 0 {
                 if valid_number {
